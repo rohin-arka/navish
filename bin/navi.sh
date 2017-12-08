@@ -1,10 +1,6 @@
 #!/bin/sh
 
-if [ $# -eq 0 ]; then
-    echo "No arguments supplied. available arguments: install"
-
-elif [ $1 == "install" ]; then
-
+naviinstall(){
     # clone navi-client into /var/navi
     echo "Cloning navi-client into ~/.navi/navi-client..."
     cloneGitRepository(){
@@ -50,6 +46,35 @@ elif [ $1 == "install" ]; then
 
     copyMitFile
     echo "... done."
-else
-    echo "available arguments: install"
+}
+
+naviupdate(){
+  sudo rm -rf $HOME/.navi/
+  naviinstall
+}
+
+command_exists () {
+    command "$1" &> /dev/null ;
+}
+
+if command_exists rbenv
+then
+    command rbenv install ruby 2.4.1
+    rbenv local 2.4.1
+elif command_exists rvm
+then
+    command rvm install 2.4.1
+    rvm use 2.4.1
 fi
+
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied. available arguments: install"
+elif [ $1 == "install" ]; then
+  naviinstall
+elif  [ $1 == "update" ]; then
+  naviupdate
+else
+  echo $1
+  echo "available arguments: install"
+fi
+
