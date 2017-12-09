@@ -40,7 +40,7 @@ naviinstall(){
 
     copyMitFile(){
         curl -o $NAVI_PATH/MITIE-models.zip "https://s3.amazonaws.com/locallockbox/MITIE-models.zip"
-        unzip -a $NAVI_PATH/MITIE-models.zip $NAVI_PATH/
+        unzip -a $NAVI_PATH/MITIE-models.zip -d $NAVI_PATH/MITIE-models
         rm -rf $NAVI_PATH/MITIE-models.zip
     }
 
