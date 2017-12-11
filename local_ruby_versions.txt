@@ -1,0 +1,25 @@
+
+rvm rubies
+
+   jruby-9.1.11.0 [ x86_64 ]
+   jruby-9.1.6.0 [ x86_64 ]
+   ruby-1.8.7-head [ i686 ]
+   ruby-1.8.7-p374 [ i686 ]
+   ruby-1.9.3-p551 [ x86_64 ]
+   ruby-2.0.0-p648 [ x86_64 ]
+   ruby-2.1.0 [ x86_64 ]
+   ruby-2.1.2 [ x86_64 ]
+   ruby-2.2.1 [ x86_64 ]
+   ruby-2.2.2 [ x86_64 ]
+   ruby-2.2.3 [ x86_64 ]
+=* ruby-2.2.4 [ missing bin/ruby ]
+   ruby-2.2.6 [ x86_64 ]
+   ruby-2.3.0 [ x86_64 ]
+   ruby-2.3.1 [ x86_64 ]
+   ruby-2.4.0 [ x86_64 ]
+   ruby-2.4.1 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+

@@ -13,7 +13,7 @@ naviinstall(){
 
     echo "Installing the dependent gems for navi-client..."
     bundleDependencies(){
-        cd $NAVI_PATH; bundle install; cd $HOME;
+        cd $NAVI_PATH/navi-client; bundle install; cd $HOME;
     }
     bundleDependencies
 
@@ -63,8 +63,14 @@ then
     rbenv local 2.4.1
 elif command_exists rvm
 then
-    command rvm install 2.4.1
+  rvm list > local_ruby_versions.txt
+  get_ruby_version="$(grep ruby-2.2.4 local_ruby_versions.txt)"
+  if [ "$get_ruby_version" ]; then
+    bash -l -c "rvm use 2.2.4"
+  else
+    rvm install 2.4.1
     rvm use 2.4.1
+  fi
 fi
 
 if [ $# -eq 0 ]; then
@@ -77,4 +83,3 @@ else
   echo $1
   echo "available arguments: install"
 fi
-
