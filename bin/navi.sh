@@ -47,9 +47,9 @@ naviinstall(){
     copyConfigFile
 
     copyMitFile(){
-        curl -o $NAVI_PATH/MITIE-models.zip "https://s3.amazonaws.com/locallockbox/MITIE-models.zip"
-        unzip -a $NAVI_PATH/MITIE-models.zip -d $NAVI_PATH/MITIE-models
-        rm -rf $NAVI_PATH/MITIE-models.zip
+        curl -o $NAVI_PATH/WIKI-models.zip "https://s3.amazonaws.com/locallockbox/WIKI-models.zip"
+        unzip -a $NAVI_PATH/WIKI-models.zip -d $NAVI_PATH/WIKI-models
+        rm -rf $NAVI_PATH/WIKI-models.zip
     }
 
     copyMitFile
