@@ -44,7 +44,7 @@ naviinstall(){
         rm -rf $NAVI_PATH/MITIE-models.zip
     }
 
-    copyMitFile
+    # copyMitFile
     echo "... done."
 }
 
@@ -68,13 +68,14 @@ then
   if [ "$get_ruby_version" ]; then
     bash -l -c "rvm use 2.2.4"
   else
-    rvm install 2.4.1
-    rvm use 2.4.1
+    bash -l -c "rvm install 2.2.4"
   fi
+  bash -l -c "rvm use 2.2.4"
 fi
 
 if [ $# -eq 0 ]; then
     echo "No arguments supplied. available arguments: install"
+    exit 64;
 elif [ $1 == "install" ]; then
   naviinstall
 elif  [ $1 == "update" ]; then
