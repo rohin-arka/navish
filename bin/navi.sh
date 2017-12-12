@@ -52,7 +52,7 @@ naviinstall(){
         rm -rf $NAVI_PATH/MITIE-models.zip
     }
 
-    # copyMitFile
+    copyMitFile
     echo "... done."
 }
 
