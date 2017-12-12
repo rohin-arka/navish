@@ -11,6 +11,14 @@ naviinstall(){
     cloneGitRepository
     echo "... done."
 
+    # include the bin/ directory of navi-client in PATH
+    if [ "$SHELL"="/bin/zsh" ]; then
+        echo "export PATH=\$PATH:\$NAVI_PATH/navi-client/bin" >> ~/.zshrc
+    else
+        echo "export PATH=\$PATH:\$NAVI_PATH/navi-client/bin" >> ~/.bashrc
+    fi
+
+
     echo "Installing the dependent gems for navi-client..."
     bundleDependencies(){
         cd $NAVI_PATH/navi-client; bundle install; cd $HOME;
@@ -83,4 +91,10 @@ elif  [ $1 == "update" ]; then
 else
   echo $1
   echo "available arguments: install"
+fi
+
+if [ "$SHELL"="/bin/zsh" ]; then
+    zsh
+else
+    bash
 fi
