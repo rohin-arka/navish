@@ -22,7 +22,7 @@ naviinstall(){
     echo "Downloading naviai program ..."
     downloadNaviAI(){
         curl -o $NAVI_PATH/bin/naviai.zip "https://s3.amazonaws.com/locallockbox/naviai.zip"
-        unzip -a $NAVI_PATH/bin/naviai.zip $NAVI_PATH/bin/
+        unzip -a $NAVI_PATH/bin/naviai.zip -d $NAVI_PATH/bin/
         rm -rf $NAVI_PATH/bin/naviai.zip
     }
     downloadNaviAI
