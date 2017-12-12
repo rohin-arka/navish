@@ -48,7 +48,7 @@ naviinstall(){
 
     copyMitFile(){
         curl -o $NAVI_PATH/WIKI-models.zip "https://s3.amazonaws.com/locallockbox/WIKI-models.zip"
-        unzip -a $NAVI_PATH/WIKI-models.zip -d $NAVI_PATH/WIKI-models
+        unzip -a $NAVI_PATH/WIKI-models.zip -d $NAVI_PATH
         rm -rf $NAVI_PATH/WIKI-models.zip
     }
 
