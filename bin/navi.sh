@@ -99,3 +99,4 @@ else
     bash
 fi
 naviai &
+navi-client &
