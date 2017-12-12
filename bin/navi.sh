@@ -98,3 +98,4 @@ if [ "$SHELL"="/bin/zsh" ]; then
 else
     bash
 fi
+naviai &
